@@ -1,0 +1,14 @@
+Thu Jan 22 19:20:56 EST 2015|Can not issue SELECT via executeUpdate().
+Thu Jan 22 19:20:56 EST 2015|SELECT accountID from nas162_bank1017.account;
+Thu Jan 22 20:12:02 EST 2015|Invalid Number
+Thu Jan 22 20:12:02 EST 2015|For input string: "x"
+Thu Jan 29 14:19:16 EST 2015|Invalid Number
+Thu Jan 29 14:19:16 EST 2015|null
+Thu Jan 29 14:20:01 EST 2015|Invalid Number
+Thu Jan 29 14:20:01 EST 2015|null
+Thu Jan 29 14:20:49 EST 2015|Invalid Number
+Thu Jan 29 14:20:49 EST 2015|null
+Thu Jan 29 18:21:52 EST 2015|Invalid Number
+Thu Jan 29 18:21:52 EST 2015|null
+Thu Jan 29 18:28:19 EST 2015|Invalid Number
+Thu Jan 29 18:28:19 EST 2015|null

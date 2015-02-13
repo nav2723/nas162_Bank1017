@@ -1,0 +1,12 @@
+Wed Jan 21 13:43:35 EST 2015|Unknown column 'type' in 'field list'
+Wed Jan 21 13:43:35 EST 2015|INSERT INTO nas162_bank1017.transaction (transactionID, accountID, amount, transactionDate, type, balance)  VALUES ('803ad2ed-031e-4436-8fa1-fe863d2f9798', 'f9b7cf4a-5d42-11e3-94ef-97beef767f1d', 50.0, CURDATE(), 'savings', 4548613.0);
+Wed Jan 21 13:47:44 EST 2015|Unknown column 'type' in 'field list'
+Wed Jan 21 13:47:44 EST 2015|INSERT INTO nas162_bank1017.transaction (transactionID, accountID, amount, transactionDate, type, balance)  VALUES ('cb379156-f392-48ad-82a2-0137a5ab960d', '2c508880-5d42-11e3-94ef-97beef767f1d', 50.0, CURDATE(), 'checking', 100050.0);
+Wed Jan 21 13:50:46 EST 2015|Unknown column 'type' in 'field list'
+Wed Jan 21 13:50:46 EST 2015|INSERT INTO nas162_bank1017.transaction (transactionID, accountID, amount, transactionDate, type, balance)  VALUES ('500a8388-2f0a-43f3-bf2f-f0106ca6984a', '3e8a08fa-5d42-11e3-94ef-97beef767f1d', 50.0, CURDATE(), 'checking', 303050.0);
+Wed Jan 21 14:01:14 EST 2015|Data truncation: Data too long for column 'state' at row 1
+Wed Jan 21 14:01:14 EST 2015|INSERT INTO nas162_bank1017.customer (customerID,firstName,lastName,ssn,streetAddress,city,state,zip,loginName,pin)  VALUES ('a44e1204-d6de-48aa-826c-31c37bf7e5a0', 'Naveen', 'Srivastava', '000000000', 'null', 'null', 'null', 'null', 'nas162', '1234'); 
+Wed Jan 21 14:03:56 EST 2015|Data truncation: Data too long for column 'state' at row 1
+Wed Jan 21 14:03:56 EST 2015|INSERT INTO nas162_bank1017.customer (customerID,firstName,lastName,ssn,streetAddress,city,state,zip,loginName,pin)  VALUES ('0040974d-02d8-4ef7-a75e-bb4d48916624', 'Naveen', 'Srivastava', '000-00-0000', 'null', 'null', 'null', 'null', 'nas162', '1234'); 
+Wed Jan 21 14:06:07 EST 2015|Data truncation: Data too long for column 'state' at row 1
+Wed Jan 21 14:06:07 EST 2015|INSERT INTO nas162_bank1017.customer (customerID,firstName,lastName,ssn,streetAddress,city,state,zip,loginName,pin)  VALUES ('efb7a62d-b6fb-4f6b-bade-273ff878be74', 'Naveen', 'Srivastava', '000-00-0000', 'null', 'null', 'null', 'null', 'nas162', '1234'); 

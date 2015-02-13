@@ -1,0 +1,4 @@
+Wed Feb 11 23:36:16 EST 2015|You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SORT BY transactionDate' at line 1
+Wed Feb 11 23:36:16 EST 2015|SELECT transactionID, transactionDate, amount FROM transaction WHERE accountID = '00ae9c2a-5d43-11e3-94ef-97beef767f1d' SORT BY transactionDate;
+Wed Feb 11 23:44:40 EST 2015|User did not enter a numeric value into the Amount box: 
+Wed Feb 11 23:44:40 EST 2015|empty String

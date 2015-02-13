@@ -1,0 +1,4 @@
+Mon Feb 09 13:58:18 EST 2015|Error in adding Accounts to the comboBox in AccountDetailsUI
+Mon Feb 09 13:58:18 EST 2015|Column 'accountID' not found.
+Mon Feb 09 14:00:15 EST 2015|Error in adding Accounts to the comboBox in AccountDetailsUI
+Mon Feb 09 14:00:15 EST 2015|Column 'accountID' not found.
