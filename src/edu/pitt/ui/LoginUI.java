@@ -51,6 +51,9 @@ public class LoginUI {
 	/**
 	 * Create the application.
 	 */
+	/**
+	 * 
+	 */
 	public LoginUI() {
 		initialize();
 	}

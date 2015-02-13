@@ -29,6 +29,9 @@ public class MySqlUtilities implements DbUtilities{
     /**
      * Default constructor creates a connection to database at the time of instantiation.
      */
+    /**
+     * 
+     */
     public MySqlUtilities() {
         createDbConnection();
     }
@@ -39,6 +42,12 @@ public class MySqlUtilities implements DbUtilities{
      * @param dbName - name of the database to connect to
      * @param dbUserName - user name for MySQL database
      * @param dbPassword - password that matches dbUserName for MySQL database
+     */
+    /**
+     * @param hostName
+     * @param dbName
+     * @param dbUserName
+     * @param dbPassword
      */
     public MySqlUtilities(String hostName, String dbName, String dbUserName, String dbPassword) {
     	// Set class-level (instance) variables
@@ -56,6 +65,9 @@ public class MySqlUtilities implements DbUtilities{
      * Connection to database is the most resource-consuming part of the database transaction. 
      * That's why we create a connection once when the object is instantiated and keep it alive through the life of this object.
      * Note that this is a private method and cannot be accessed from outside of this class.
+     */
+    /**
+     * 
      */
     private void createDbConnection(){
         try {
@@ -78,6 +90,9 @@ public class MySqlUtilities implements DbUtilities{
      * @return - ResultSet - java.sql.ResultSet object, contains results from SQL query argument
      * @throws SQLException
      */
+    /* (non-Javadoc)
+     * @see edu.pitt.utilities.DbUtilities#getResultSet(java.lang.String)
+     */
     public ResultSet getResultSet(String sql) throws SQLException {  
         try {
             if(conn == null){ // Check if connection object already exists
@@ -97,6 +112,9 @@ public class MySqlUtilities implements DbUtilities{
      * Executes INSERT, UPDATE, DELETE queries
      * @param sql - SQL statement - a well-formed INSERT, UPDATE, or DELETE query
      * @return true if execution succeeded, false if failed 
+     */
+    /* (non-Javadoc)
+     * @see edu.pitt.utilities.DbUtilities#executeQuery(java.lang.String)
      */
     public boolean executeQuery(String sql){
         try {
@@ -120,6 +138,9 @@ public class MySqlUtilities implements DbUtilities{
      * @param sql - SQL SELECT query
      * @return a model for JTable
      * @throws SQLException
+     */
+    /* (non-Javadoc)
+     * @see edu.pitt.utilities.DbUtilities#getDataTable(java.lang.String)
      */
     public DefaultTableModel getDataTable(String sql) throws SQLException{
     	ResultSet rs = getResultSet(sql);
@@ -155,6 +176,9 @@ public class MySqlUtilities implements DbUtilities{
      * @return a model for JTable
      * @throws SQLException
      */
+    /* (non-Javadoc)
+     * @see edu.pitt.utilities.DbUtilities#getDataTable(java.lang.String, java.lang.String[])
+     */
     public DefaultTableModel getDataTable(String sqlQuery, String[] customColumnNames) throws SQLException{
     	ResultSet rs = getResultSet(sqlQuery);
     	/* Metadata object contains additional information about a ResulSet, 
@@ -180,6 +204,9 @@ public class MySqlUtilities implements DbUtilities{
 		return new DefaultTableModel(data, columnNames);
 	}
     
+    /**
+     * 
+     */
     public void closeDbConnection(){
 
     	if(conn != null){ // Check if connection object already exists

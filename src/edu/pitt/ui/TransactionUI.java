@@ -31,6 +31,9 @@ public class TransactionUI {
 	/**
 	 * Create the application.
 	 */
+	/**
+	 * @param a
+	 */
 	public TransactionUI(Account a) {
 		currentAccount = a;
 		initialize();

@@ -8,6 +8,10 @@ import edu.pitt.utilities.DbUtilities;
 import edu.pitt.utilities.MySqlUtilities;
 import edu.pitt.utilities.ErrorLogger;
 
+/**
+ * @author NSrivastava
+ *
+ */
 public class Customer {
 	private String customerID;
 	private String firstName;
@@ -21,6 +25,9 @@ public class Customer {
 	private int pin;
 	DbUtilities db = new MySqlUtilities();
 	
+	/**
+	 * @param customerID
+	 */
 	public Customer(String customerID){
 		String sql = "SELECT * FROM nas162_bank1017.customer "; 
 		sql += "WHERE customerID = '" + customerID + "'";
@@ -48,6 +55,17 @@ public class Customer {
 		}
 	}
 	
+	/**
+	 * @param lastName
+	 * @param firstName
+	 * @param ssn
+	 * @param loginName
+	 * @param pin
+	 * @param streetAddress
+	 * @param city
+	 * @param state
+	 * @param zip
+	 */
 	public Customer(String lastName, String firstName, String ssn, String loginName, int pin, String streetAddress, String city, String state, int zip){
 		this.customerID = UUID.randomUUID().toString();
 		this.firstName = firstName;
@@ -80,33 +98,57 @@ public class Customer {
 		db.executeQuery(sql);
 	}
 	
+	/**
+	 * @return
+	 */
 	public String getCustomerID(){
 		return customerID;
 	}
 	
+	/**
+	 * @return
+	 */
 	public String getStreetAddress(){
 		return streetAddress;
 	}
 	
+	/**
+	 * @return
+	 */
 	public String getCity(){
 		return city;
 	}
 	
+	/**
+	 * @return
+	 */
 	public String getState(){
 		return state;
 	}
 	
+	/**
+	 * @return
+	 */
 	public String getLoginName(){
 		return loginName;
 	}
 	
+	/**
+	 * @return
+	 */
 	public String getFirstName(){
 		return firstName;
 	}
 	
+	/**
+	 * @return
+	 */
 	public String getLastName(){
 		return lastName;
 	}
+	/**
+	 * @param streetAddress
+	 */
 	public void setStreetAddress(String streetAddress){
 		String sql = "UPDATE nas162_bank1017.customer SET streetAddress = '" + streetAddress + "' WHERE customerID = '" + this.customerID + "';";
 		try {
@@ -120,6 +162,9 @@ public class Customer {
 		this.streetAddress = streetAddress;
 	}
 	 
+	/**
+	 * @param city
+	 */
 	public void setCity(String city){
 		String sql = "UPDATE nas162_bank1017.customer SET city = '" + city + "' WHERE customerID = '" + this.customerID + "';";
 		try {
@@ -133,6 +178,9 @@ public class Customer {
 		this.city = city;
 	}
 	
+	/**
+	 * @param state
+	 */
 	public void setState(String state){
 		String sql = "UPDATE nas162_bank1017.customer SET state = '" + state + "' WHERE customerID = '" + this.customerID + "';";
 		try {
@@ -145,6 +193,9 @@ public class Customer {
 		this.state = state;
 	}
 	
+	/**
+	 * @param zip
+	 */
 	public void setZip(int zip){
 		String sql = "UPDATE nas162_bank1017.customer SET zip = '" + zip + "' WHERE customerID = '" + this.customerID + "';";
 		try {

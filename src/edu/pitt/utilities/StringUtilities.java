@@ -14,6 +14,10 @@ public class StringUtilities {
 	 * @param extension - Extension of a file, usually a .txt
 	 * @return File name
 	 */
+	/**
+	 * @param extension
+	 * @return
+	 */
 	public static String dateToFilename(String extension) {
 		Date tempDate = new Date();
 		return tempDate.getMonth() + "_" + tempDate.getDay() + "_" + tempDate.getYear() + "." + extension;
@@ -25,6 +29,10 @@ public class StringUtilities {
 	 * will return false. 
 	 * @param str - String variable - we need to check if it can be converted to a number without an error
 	 * @return boolean (true/false)
+	 */
+	/**
+	 * @param str
+	 * @return
 	 */
 	public static boolean isNumeric(String str) {
 		try {

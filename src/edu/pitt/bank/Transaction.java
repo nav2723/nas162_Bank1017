@@ -18,6 +18,9 @@ public class Transaction {
 	@SuppressWarnings("unused")
 	private Date transactionDate; 
 	
+	/**
+	 * @param transactionID
+	 */
 	public Transaction(String transactionID){
 		String sql = "SELECT * FROM nas162_bank1017.transaction "; 
 		sql += "WHERE transactionID = '" + transactionID + "'";
@@ -41,6 +44,12 @@ public class Transaction {
 		
 	}
 	
+	/**
+	 * @param accountID
+	 * @param type
+	 * @param amount
+	 * @param balance
+	 */
 	public Transaction(String accountID, String type, double amount, double balance){
 		this.transactionID = UUID.randomUUID().toString();
 		this.type = type;
@@ -63,18 +72,30 @@ public class Transaction {
 		db.executeQuery(sql);
 	}
 	
+	/**
+	 * @return
+	 */
 	public String getTransactionID(){
 		return transactionID;
 	}
 	
+	/**
+	 * @return
+	 */
 	public double getAmount(){
 		return amount;
 	}
 	
+	/**
+	 * @return
+	 */
 	public String getAccountID(){
 		return accountID;
 	}
 	
+	/**
+	 * @return
+	 */
 	public double getBalance(){
 		return balance;
 	}

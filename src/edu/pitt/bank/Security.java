@@ -8,8 +8,17 @@ import edu.pitt.utilities.DbUtilities;
 import edu.pitt.utilities.MySqlUtilities;
 import edu.pitt.utilities.ErrorLogger;
 
+/**
+ * @author NSrivastava
+ *
+ */
 public class Security {
 
+	/**
+	 * @param loginName
+	 * @param pin
+	 * @return
+	 */
 	public Customer validateLogin(String loginName, int pin){
 		String sql = "SELECT * FROM customer WHERE loginName = '" + loginName + "' AND pin = '" + pin + "';";
 		Customer cust = null;
@@ -27,6 +36,10 @@ public class Security {
 		
 	}
 	
+	/**
+	 * @param userID
+	 * @return
+	 */
 	public ArrayList<String> listUserGroup(String userID){
 		DbUtilities db = new MySqlUtilities();
 		ArrayList<String> userGroups = new ArrayList<String>();
@@ -44,10 +57,6 @@ public class Security {
 			ErrorLogger.log("Error in listUserGroup method in Security class");
 			ErrorLogger.log(e.getMessage());
 		}
-		
-//		for (int i = 0; i < userGroups.size(); i++){
-//			System.out.println(userGroups.get(i));
-//		}
 		return userGroups;
 	}
 }

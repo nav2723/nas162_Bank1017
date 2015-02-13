@@ -49,6 +49,9 @@ public class AccountDetailsUI {
 	/**
 	 * Create the application.
 	 */
+	/**
+	 * @param c
+	 */
 	public AccountDetailsUI(Customer c) {
 		accountOwner = c;
 		initialize();

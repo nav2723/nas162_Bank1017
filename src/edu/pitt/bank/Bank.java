@@ -17,6 +17,9 @@ public class Bank {
 	public Account acc = null;
 	
 
+	/**
+	 * 
+	 */
 	public Bank(){
 	
 		loadAccounts();
@@ -24,6 +27,9 @@ public class Bank {
 	}
 
 	
+	/**
+	 * 
+	 */
 	public void loadAccounts(){
 		
 		String sql = "SELECT accountID FROM account;";
@@ -45,6 +51,10 @@ public class Bank {
 
 	}
 	
+	/**
+	 * @param accountID
+	 * @return
+	 */
 	public Account findAccount(String accountID){
 		Account foundAccount = null;
 		for (int i=0; i < accountList.size(); i++){
@@ -57,6 +67,10 @@ public class Bank {
 		
 	}
 	
+	/**
+	 * @param customerID
+	 * @return
+	 */
 	public Customer findCustomer(String customerID){
 		Customer foundCustomer = null;
 		for (int i=0; i < customerList.size(); i++){
@@ -68,6 +82,9 @@ public class Bank {
 		return null;
 	}
 	
+	/**
+	 * 
+	 */
 	public void setAccountOwners(){
 		
 		String sql = "SELECT fk_accountID, fk_customerID FROM account_customer;";
