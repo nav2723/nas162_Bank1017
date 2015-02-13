@@ -31,7 +31,6 @@ public class AccountDetailsUI {
 
 	private JFrame accountDetailsFrame;
 	JComboBox cboAccounts;
-	JTextArea txtDebug;
 	private Customer accountOwner;
 	JLabel lblAccountTypeTxt;
 	JLabel lblAccountType;
@@ -64,11 +63,6 @@ public class AccountDetailsUI {
 		accountDetailsFrame.setBounds(100, 100, 450, 300);
 		accountDetailsFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		accountDetailsFrame.getContentPane().setLayout(null);
-
-
-		txtDebug = new JTextArea();
-		txtDebug.setBounds(6, 256, 438, 16);
-		accountDetailsFrame.getContentPane().add(txtDebug);
 
 		lblAccountTypeTxt = new JLabel("Account Type:");
 		lblAccountTypeTxt.setBounds(6, 118, 90, 16);
@@ -124,7 +118,6 @@ public class AccountDetailsUI {
 			public void actionPerformed(ActionEvent e){
 				Security s = new Security();
 				Account selectedAccount = (Account) cboAccounts.getSelectedItem();
-				txtDebug.setText("Account: " + selectedAccount.getAccountID() + " = " + selectedAccount.getBalance());
 
 				lblAccountType.setText(selectedAccount.getType());
 
@@ -184,13 +177,16 @@ public class AccountDetailsUI {
 			public void actionPerformed(ActionEvent e) {
 				Account currentAccount = (Account) cboAccounts.getSelectedItem();
 				try{
-					Double.parseDouble(txtAmount.getText());
-
-					currentAccount.withdraw(Double.parseDouble(txtAmount.getText()));
-					JOptionPane.showMessageDialog(null, "$" + txtAmount.getText() + " has been withdrawn.");
-					txtAmount.setText("");
-					Double balanceValue = currentAccount.getBalance();
-					lblBalance.setText("$" + Double.toString(balanceValue));
+					Double amount = Double.parseDouble(txtAmount.getText());
+					if (amount > currentAccount.getBalance()){
+						JOptionPane.showMessageDialog(null, "You cannot withdraw more than you have in your account");
+					} else {
+						currentAccount.withdraw(Double.parseDouble(txtAmount.getText()));
+						JOptionPane.showMessageDialog(null, "$" + txtAmount.getText() + " has been withdrawn.");
+						txtAmount.setText("");
+						Double balanceValue = currentAccount.getBalance();
+						lblBalance.setText("$" + Double.toString(balanceValue));
+					}
 				}
 				catch (Exception ex) {
 					JOptionPane.showMessageDialog(null, "You must enter a numeric value.");
