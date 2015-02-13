@@ -23,6 +23,7 @@ public class Security {
 			ErrorLogger.log("Error in Customer validateLogin method in Security class");
 			ErrorLogger.log(e.getMessage());
 		}
+		
 		return cust;
 		
 	}
@@ -31,7 +32,7 @@ public class Security {
 		DbUtilities db = new MySqlUtilities();
 		ArrayList<String> userGroups = new ArrayList<String>();
 		String sql = "SELECT user_permissions.groupID, groups.groupName "
-				+ "FROM nas162_bank1017.user_permissions "
+				+ "FROM user_permissions "
 				+ "INNER JOIN groups "
 				+ "ON user_permissions.groupID = groups.groupID "
 				+ "WHERE groupOrUserID = '" + userID.toString() + "';";
