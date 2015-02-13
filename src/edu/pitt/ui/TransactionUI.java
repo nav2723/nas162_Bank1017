@@ -52,8 +52,8 @@ public class TransactionUI {
 		transactionPane = new JScrollPane();
 		transactionFrame.getContentPane().add(transactionPane, BorderLayout.CENTER);
 		DbUtilities db = new MySqlUtilities();
-		String[] cols = {"Transaction ID", "Date", "Amount"};
-		String sql = "SELECT transactionID, transactionDate, amount "
+		String[] cols = {"Transaction ID", "Date", "Type", "Amount"};
+		String sql = "SELECT transactionID, transactionDate, type, amount "
 				+ "FROM transaction "
 				+ "WHERE accountID = '" + currentAccount.getAccountID() + "' ORDER BY transactionDate DESC;"; 
 		try {

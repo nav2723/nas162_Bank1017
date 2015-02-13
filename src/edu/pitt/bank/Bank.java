@@ -20,7 +20,7 @@ public class Bank {
 	public Bank(){
 	
 		loadAccounts();
-		//setAccountOwners();
+		setAccountOwners();
 	}
 
 	
@@ -57,17 +57,15 @@ public class Bank {
 		
 	}
 	
-	public Customer findCustomer(String customer){
+	public Customer findCustomer(String customerID){
 		Customer foundCustomer = null;
 		for (int i=0; i < customerList.size(); i++){
-			if (customerList.get(i).toString().contains(customer)){
+			if (customerList.get(i).getCustomerID().equalsIgnoreCase(customerID)){
 				System.out.println("Found customer");
-				foundCustomer = new Customer(customer);
-				break;
+				return customerList.get(i);
 			}
 		}
-		return foundCustomer;
-		
+		return null;
 	}
 	
 	public void setAccountOwners(){
@@ -90,18 +88,6 @@ public class Bank {
 			ErrorLogger.log(e.getMessage());
 			
 		}
-		for (int i=0; i < customerList.size(); i++){
-			System.out.println("Customerlist " + customerList.get(i).getCustomerID());
-		}
-		
-//Add each Customer object to accountOwners property of Account class
-//Use addAccountOwner method of Account class
-//		loadAccounts();
-//		for (int i = 0; i < customerList.size(); i++){
-//			acc.addAccountOwner(customerList.get(i));
-//		}
-	
-		
 		
 	}
 	

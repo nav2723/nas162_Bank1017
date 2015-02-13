@@ -23,7 +23,6 @@ public class Security {
 			ErrorLogger.log("Error in Customer validateLogin method in Security class");
 			ErrorLogger.log(e.getMessage());
 		}
-		
 		return cust;
 		
 	}
