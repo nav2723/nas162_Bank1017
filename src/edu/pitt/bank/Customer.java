@@ -31,7 +31,6 @@ public class Customer {
 	public Customer(String customerID){
 		String sql = "SELECT * FROM nas162_bank1017.customer "; 
 		sql += "WHERE customerID = '" + customerID + "'";
-//		System.out.println(sql);
 		
 		try {
 			ResultSet rs = db.getResultSet(sql);
@@ -150,15 +149,6 @@ public class Customer {
 	 * @param streetAddress
 	 */
 	public void setStreetAddress(String streetAddress){
-		String sql = "UPDATE nas162_bank1017.customer SET streetAddress = '" + streetAddress + "' WHERE customerID = '" + this.customerID + "';";
-		try {
-			db.executeQuery(sql);
-		} catch(Exception e){
-			e.printStackTrace();
-			ErrorLogger.log("Error in setting streetAddress in Customer class");
-			ErrorLogger.log(e.getMessage());
-			
-		}
 		this.streetAddress = streetAddress;
 	}
 	 
@@ -166,15 +156,6 @@ public class Customer {
 	 * @param city
 	 */
 	public void setCity(String city){
-		String sql = "UPDATE nas162_bank1017.customer SET city = '" + city + "' WHERE customerID = '" + this.customerID + "';";
-		try {
-			db.executeQuery(sql);
-			System.out.println(sql);
-		} catch(Exception e){
-			e.printStackTrace();
-			ErrorLogger.log("Error in setting city in Customer class");
-			ErrorLogger.log(e.getMessage());
-		}
 		this.city = city;
 	}
 	
@@ -182,29 +163,13 @@ public class Customer {
 	 * @param state
 	 */
 	public void setState(String state){
-		String sql = "UPDATE nas162_bank1017.customer SET state = '" + state + "' WHERE customerID = '" + this.customerID + "';";
-		try {
-			db.executeQuery(sql);
-		} catch(Exception e){
-			e.printStackTrace();
-			ErrorLogger.log("Error in setting state in Customer class");
-			ErrorLogger.log(e.getMessage());
-		}
 		this.state = state;
 	}
 	
 	/**
 	 * @param zip
 	 */
-	public void setZip(int zip){
-		String sql = "UPDATE nas162_bank1017.customer SET zip = '" + zip + "' WHERE customerID = '" + this.customerID + "';";
-		try {
-			db.executeQuery(sql);
-		} catch(Exception e){
-			e.printStackTrace();
-			ErrorLogger.log("Error in setting zip in Customer class");
-			ErrorLogger.log(e.getMessage());
-		}
+	public void setZip(int zip){	
 		this.zip = zip;
 	}
 	
