@@ -25,6 +25,7 @@ public class Transaction {
 		String sql = "SELECT * FROM nas162_bank1017.transaction "; 
 		sql += "WHERE transactionID = '" + transactionID + "'";
 		DbUtilities db = new MySqlUtilities();
+		MySqlUtilities ms = new MySqlUtilities();
 		try {
 			ResultSet rs = db.getResultSet(sql);
 			while(rs.next()){
@@ -41,6 +42,7 @@ public class Transaction {
 			ErrorLogger.log("Error in assigning Transaction variables in Transaction class");
 			ErrorLogger.log(e.getMessage());
 		}
+		ms.closeDbConnection();
 		
 	}
 	

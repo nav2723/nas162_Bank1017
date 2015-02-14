@@ -55,6 +55,7 @@ public class TransactionUI {
 		transactionPane = new JScrollPane();
 		transactionFrame.getContentPane().add(transactionPane, BorderLayout.CENTER);
 		DbUtilities db = new MySqlUtilities();
+		MySqlUtilities ms = new MySqlUtilities();
 		String[] cols = {"Transaction ID", "Date", "Type", "Amount"};
 		String sql = "SELECT transactionID, transactionDate, type, amount "
 				+ "FROM transaction "
@@ -73,7 +74,7 @@ public class TransactionUI {
 			ErrorLogger.log("Error in initializing TransactionUI frame");
 			ErrorLogger.log(e.getMessage());
 		}
-		
+		ms.closeDbConnection();
 		
 	}
 }

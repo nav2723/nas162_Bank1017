@@ -35,6 +35,7 @@ public class Bank {
 		String sql = "SELECT accountID FROM account;";
 		
 		DbUtilities db = new MySqlUtilities();
+		MySqlUtilities ms = new MySqlUtilities();
 		try {
 			ResultSet rs = db.getResultSet(sql);
 			while(rs.next()){
@@ -46,8 +47,8 @@ public class Bank {
 			// TODO Auto-generated catch block
 			ErrorLogger.log("Error in loadAccounts method of the Bank class");
 			ErrorLogger.log(e.getMessage());
-			
 		}
+		ms.closeDbConnection();
 
 	}
 	
@@ -90,6 +91,7 @@ public class Bank {
 		String sql = "SELECT fk_accountID, fk_customerID FROM account_customer;";
 		Customer cust = null;
 		DbUtilities db = new MySqlUtilities();
+		MySqlUtilities ms = new MySqlUtilities();
 		try {
 			ResultSet rs = db.getResultSet(sql);
 			while(rs.next()){
@@ -105,6 +107,7 @@ public class Bank {
 			ErrorLogger.log(e.getMessage());
 			
 		}
+		ms.closeDbConnection();
 		
 	}
 	

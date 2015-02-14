@@ -225,6 +225,7 @@ public class AccountDetailsUI {
 
 
 		DbUtilities db = new MySqlUtilities();
+		MySqlUtilities ms = new MySqlUtilities();
 		String sql = "SELECT * FROM customer JOIN customer_account ON customerId = "
 				+ "fk_customerId JOIN account ON fk_accountId = accountId "
 				+ "WHERE customerId = '" + accountOwner.getCustomerID() + "';";
@@ -239,6 +240,7 @@ public class AccountDetailsUI {
 			ErrorLogger.log("Error in adding Accounts to the comboBox in AccountDetailsUI");
 			ErrorLogger.log(e.getMessage());
 		}
+		ms.closeDbConnection();
 	}
 }
 

@@ -23,6 +23,7 @@ public class Security {
 		String sql = "SELECT * FROM customer WHERE loginName = '" + loginName + "' AND pin = '" + pin + "';";
 		Customer cust = null;
 		DbUtilities db = new MySqlUtilities();
+		MySqlUtilities ms = new MySqlUtilities();
 		try{
 			ResultSet rs = db.getResultSet(sql);
 			if (rs.next()){
@@ -32,6 +33,8 @@ public class Security {
 			ErrorLogger.log("Error in Customer validateLogin method in Security class");
 			ErrorLogger.log(e.getMessage());
 		}
+		ms.closeDbConnection();
+		
 		return cust;
 		
 	}
@@ -42,6 +45,7 @@ public class Security {
 	 */
 	public ArrayList<String> listUserGroup(String userID){
 		DbUtilities db = new MySqlUtilities();
+		MySqlUtilities ms = new MySqlUtilities();
 		ArrayList<String> userGroups = new ArrayList<String>();
 		String sql = "SELECT user_permissions.groupID, groups.groupName "
 				+ "FROM user_permissions "
@@ -57,6 +61,7 @@ public class Security {
 			ErrorLogger.log("Error in listUserGroup method in Security class");
 			ErrorLogger.log(e.getMessage());
 		}
+		ms.closeDbConnection();
 		return userGroups;
 	}
 }
