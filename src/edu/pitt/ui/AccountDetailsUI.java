@@ -44,6 +44,9 @@ public class AccountDetailsUI {
 	private JLabel lblAmountTxt;
 	private JTextField textField;
 	private JTextField txtAmount;
+	JButton btnDeposit;
+	JButton btnShowTransaction;
+	JButton btnWithdraw;
 
 
 	/**
@@ -152,7 +155,7 @@ public class AccountDetailsUI {
 		accountDetailsFrame.getContentPane().add(txtAmount);
 		txtAmount.setColumns(10);
 
-		JButton btnDeposit = new JButton("Deposit");
+		btnDeposit = new JButton("Deposit");
 		btnDeposit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Account currentAccount = (Account) cboAccounts.getSelectedItem();
@@ -175,7 +178,7 @@ public class AccountDetailsUI {
 		btnDeposit.setBounds(211, 165, 99, 29);
 		accountDetailsFrame.getContentPane().add(btnDeposit);
 
-		JButton btnWithdraw = new JButton("Withdraw");
+		btnWithdraw = new JButton("Withdraw");
 		btnWithdraw.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Account currentAccount = (Account) cboAccounts.getSelectedItem();
@@ -201,7 +204,7 @@ public class AccountDetailsUI {
 		btnWithdraw.setBounds(322, 165, 99, 29);
 		accountDetailsFrame.getContentPane().add(btnWithdraw);
 
-		JButton btnShowTransaction = new JButton("Show Transactions");
+		btnShowTransaction = new JButton("Show Transactions");
 		btnShowTransaction.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
