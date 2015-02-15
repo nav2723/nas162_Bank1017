@@ -134,7 +134,7 @@ public class AccountDetailsUI {
 				lblPenalty.setText("$" + Double.toString(penaltyValue));
 
 				String userGroupString = s.listUserGroup(accountOwner.getCustomerID().toString()).toString();
-				lblHeader.setText("<html>"+accountOwner.getFirstName().toString() + " " + accountOwner.getLastName().toString() + ", welcome to 1017 Bank."
+				lblHeader.setText("<html>"+accountOwner.getFirstName().toString() + " " + accountOwner.getLastName().toString() + ", welcome to 1017 Bank. "
 						+ "You have the following permissions in this system: " + userGroupString.substring(1, userGroupString.length()-1) + "</html>");
 
 			}
